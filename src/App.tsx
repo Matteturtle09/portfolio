@@ -1,18 +1,16 @@
-import { Button } from "@/components/ui/button"
+import ShaderBackground from "./components/ShaderBackground"
+import { SpecialText } from "./components/ui/special-text"
 
 export function App() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+    <div className="grid h-[80vh] place-items-center w-full isolate relative">
+      <div className="col-start-1 row-start-1 w-full h-full z-0 opacity-50">
+        <ShaderBackground />
+      </div>
+      <div className="col-start-1 row-start-1 z-10 w-full">
+        <div className="flex items-center justify-center min-h-100 p-8">
+          <SpecialText once={false} className="text-6xl font-bold">👋 Hi, I'm Matteo</SpecialText>
+        </div>      
       </div>
     </div>
   )
