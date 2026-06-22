@@ -1,8 +1,10 @@
 import ShaderBackground from "./components/ShaderBackground"
 import { SpecialText } from "./components/ui/special-text"
+import TricolorSeparator from "./components/ui/tricolor-separator"
 
 export function App() {
   return (
+    <>
     <div className="grid h-[80vh] place-items-center w-full isolate relative">
       <div className="col-start-1 row-start-1 w-full h-full z-0 opacity-50">
         <ShaderBackground />
@@ -13,6 +15,8 @@ export function App() {
         </div>      
       </div>
     </div>
+    <TricolorSeparator/>
+    </>
   )
 }
 
