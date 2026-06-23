@@ -157,7 +157,7 @@ export function GlitchTypewriter({
         {displayText}
         {cursor && (
           <span
-            className="ml-1 transition-opacity duration-75 font-sans"
+            className="ml-1 transition-opacity duration-75"
             style={{ opacity: showCursor ? 1 : 0 }}
           >
             {cursorChar}
