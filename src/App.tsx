@@ -23,7 +23,7 @@ export function App() {
         <h1 className="text-center text-4xl font-mono">
           My Projects
         </h1>
-        <ProjectCard/>
+        <ProjectCard tags={['experiment']}/>
       </section>
     </>
   )

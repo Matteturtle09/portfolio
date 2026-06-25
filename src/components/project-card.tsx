@@ -1,24 +1,16 @@
-import { EthereumIcon } from './icons/hugeicons-ethereum'
+import type { ProjectTag } from '@/types'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from './ui/card'
-import { FlaskConical } from 'lucide-react'
+import ProjectCardTag from './ui/project-card-tag'
 
-const ProjectCard = () => {
+interface ProjectCardProps{
+    tags: ProjectTag[]
+}
+
+const ProjectCard = ({tags}:ProjectCardProps) => {
     return (
         <Card className="w-full max-w-md rounded-none border border-[#202020] border-b-4 border-b-[#d65d0e] bg-[#0d0e0f]   shadow-none">
-            <div className="flex items-center gap-4 px-6 pt-6">
-                <div className="group flex items-center gap-2 cursor-pointer">
-                    <EthereumIcon className="h-5 w-5 transition-colors duration-300 group-hover:text-[#d65d0e]" />
-                    <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-mono opacity-0 transition-all duration-300 ease-out group-hover:max-w-[100px] group-hover:opacity-100">
-                        Blockchain
-                    </span>
-                </div>
-
-                <div className="group flex items-center gap-2 cursor-pointer">
-                    <FlaskConical className="h-5 w-5 transition-colors duration-300 group-hover:text-[#d65d0e]" />
-                    <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-mono opacity-0 transition-all duration-300 ease-out group-hover:max-w-[100px] group-hover:opacity-100">
-                        Experiment
-                    </span>
-                </div>
+            <div className="flex items-center gap-4 px-6 pt-3">
+                {tags.map((tag) => <ProjectCardTag tag={tag}/>)}
             </div>
 
             <CardHeader className="pt-3 pb-2">
