@@ -2,20 +2,22 @@ import type { ProjectTag } from '@/types'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from './ui/card'
 import ProjectCardTag from './ui/project-card-tag'
 
-interface ProjectCardProps{
-    tags: ProjectTag[]
+interface ProjectCardProps {
+    name: string;
+    description: string;
+    tags: ProjectTag[];
 }
 
-const ProjectCard = ({tags}:ProjectCardProps) => {
+const ProjectCard = ({ tags, name, description }: ProjectCardProps) => {
     return (
         <Card className="w-full max-w-md rounded-none border border-[#202020] border-b-4 border-b-[#d65d0e] bg-[#0d0e0f]   shadow-none">
             <div className="flex items-center gap-4 px-6 pt-3">
-                {tags.map((tag) => <ProjectCardTag tag={tag}/>)}
+                {tags.map((tag) => <ProjectCardTag tag={tag} />)}
             </div>
 
             <CardHeader className="pt-3 pb-2">
                 <CardTitle className="text-2xl font-bold  ">
-                    Project Title
+                    {name}
                 </CardTitle>
                 <CardDescription className="text-sm font-medium  mt-1">
                     Stuff used
@@ -24,7 +26,7 @@ const ProjectCard = ({tags}:ProjectCardProps) => {
 
             <CardContent className="py-2">
                 <p className="text-sm ">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi mollitia, quaerat repellat voluptates quo harum, nulla delectus necessitatibus omnis esse quae repellendus corrupti, incidunt distinctio veritatis eius dolores assumenda velit.
+                    {description}
                 </p>
             </CardContent>
 
