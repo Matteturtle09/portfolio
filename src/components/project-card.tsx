@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
     return (
-        <Card className="w-full max-w-md rounded-none border border-[#202020] border-b-4 border-b-[#d65d0e] bg-[#0d0e0f]   shadow-none">
+        <Card className="max-w-md rounded-none border border-[#202020] border-b-4 border-b-[#d65d0e] bg-[#0d0e0f] shadow-none">
             <div className="flex items-center gap-4 px-6 pt-3">
                 {project.tags.map((tag) => <ProjectCardTag tag={tag} />)}
             </div>

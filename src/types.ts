@@ -8,6 +8,6 @@ export type Technology =
 export interface Project {
     name: string;
     description: string;
-    technologies: technology[];
+    technologies: Technology[];
     tags: ProjectTag[];
 }
