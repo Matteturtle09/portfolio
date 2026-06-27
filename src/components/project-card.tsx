@@ -1,32 +1,33 @@
-import type { ProjectTag } from '@/types'
+import type { Project } from '@/types'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from './ui/card'
 import ProjectCardTag from './ui/project-card-tag'
+import ProjectCardTechnology from './ui/project-card-technology';
 
 interface ProjectCardProps {
-    name: string;
-    description: string;
-    tags: ProjectTag[];
+    project: Project;
 }
 
-const ProjectCard = ({ tags, name, description }: ProjectCardProps) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
     return (
         <Card className="w-full max-w-md rounded-none border border-[#202020] border-b-4 border-b-[#d65d0e] bg-[#0d0e0f]   shadow-none">
             <div className="flex items-center gap-4 px-6 pt-3">
-                {tags.map((tag) => <ProjectCardTag tag={tag} />)}
+                {project.tags.map((tag) => <ProjectCardTag tag={tag} />)}
             </div>
 
-            <CardHeader className="pt-3 pb-2">
+            <CardHeader className="">
                 <CardTitle className="text-2xl font-bold  ">
-                    {name}
+                    {project.name}
                 </CardTitle>
-                <CardDescription className="text-sm font-medium  mt-1">
-                    Stuff used
+                <CardDescription className="text-sm font-medium mt-1 flex flex-row flex-wrap items-center gap-1 w-full">
+                    {project.technologies.map((tech) => (
+                        <ProjectCardTechnology key={tech} technology={tech} />
+                    ))}
                 </CardDescription>
             </CardHeader>
 
-            <CardContent className="py-2">
+            <CardContent className="">
                 <p className="text-sm ">
-                    {description}
+                    {project.description}
                 </p>
             </CardContent>
 
