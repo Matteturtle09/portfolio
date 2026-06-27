@@ -5,7 +5,7 @@ import type { Project } from "./types";
 
 export function App() {
 
-  const projects: Project[] = [
+  const dummyProjects: Project[] = [
     {
       name: "Nebula Dashboard",
       description: "A high-performance analytics dashboard designed for real-time monitoring of cloud infrastructure, featuring custom data visualization components.",
@@ -72,7 +72,7 @@ export function App() {
     <>
       <Hero />
       <TricolorSeparator />
-      <ProjectsSection projects={projects} />
+      <ProjectsSection projects={dummyProjects} />
     </>
   )
 }
