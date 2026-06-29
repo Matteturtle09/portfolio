@@ -1,3 +1,5 @@
+import type { ComponentType } from "react";
+
 export type ProjectTag = 'experiment' | 'production' | 'blockchain' | 'iot'
 
 export type Technology = 
@@ -10,4 +12,5 @@ export interface Project {
     description: string;
     technologies: Technology[];
     tags: ProjectTag[];
+    Content: ComponentType | undefined;
 }
