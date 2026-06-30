@@ -1,11 +1,11 @@
 import { motion, type Variants } from "framer-motion"
 import type { Project } from "@/types"
 import ProjectCard from "./project-card"
-import { useState } from "react";
-import ProjectPage from "./project-page";
+import { useState } from "react"
+import ProjectPage from "./project-page"
 
 interface ProjectSectionProps {
-  projects: Project[];
+  projects: Project[]
 }
 
 const containerVariants: Variants = {
@@ -26,27 +26,27 @@ const itemVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1]
-    }
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 }
 
 const ProjectsSection = ({ projects }: ProjectSectionProps) => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 mt-12">
+    <section className="mx-auto mt-12 w-full max-w-7xl px-4">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center text-4xl font-mono mb-12"
+        className="mb-12 text-center font-mono text-4xl"
       >
         My Projects
       </motion.h1>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+        className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -54,15 +54,18 @@ const ProjectsSection = ({ projects }: ProjectSectionProps) => {
       >
         {projects.map((project) => (
           <motion.div key={project.name} variants={itemVariants}>
-            <ProjectCard project={project} onOpen={() => setSelectedProject(project)}/>
+            <ProjectCard
+              project={project}
+              onOpen={() => setSelectedProject(project)}
+            />
           </motion.div>
         ))}
       </motion.div>
 
       {selectedProject && (
-        <ProjectPage 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+        <ProjectPage
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
         />
       )}
     </section>

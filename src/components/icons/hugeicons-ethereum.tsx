@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 
 export function EthereumIcon({
   size = 24,
@@ -7,9 +7,9 @@ export function EthereumIcon({
   className,
   ...props
 }: React.SVGProps<SVGSVGElement> & {
-  size?: number;
-  color?: string;
-  strokeWidth?: number;
+  size?: number
+  color?: string
+  strokeWidth?: number
 }) {
   return (
     <svg
@@ -25,7 +25,7 @@ export function EthereumIcon({
       className={className}
       {...props}
     >
-      <path d="m19 12l-5.76 2.578c-.611.281-.917.422-1.24.422s-.629-.14-1.24-.422L5 12m14 0c0-.532-.306-1-.917-1.937L14.58 4.696C13.406 2.899 12.82 2 12 2s-1.406.899-2.58 2.696l-3.503 5.368C5.305 11 5 11.468 5 12m14 0c0 .532-.306 1-.917 1.936l-3.503 5.368C13.406 21.1 12.82 22 12 22s-1.406-.899-2.58-2.696l-3.503-5.368C5.305 13 5 12.532 5 12"/>
+      <path d="m19 12l-5.76 2.578c-.611.281-.917.422-1.24.422s-.629-.14-1.24-.422L5 12m14 0c0-.532-.306-1-.917-1.937L14.58 4.696C13.406 2.899 12.82 2 12 2s-1.406.899-2.58 2.696l-3.503 5.368C5.305 11 5 11.468 5 12m14 0c0 .532-.306 1-.917 1.936l-3.503 5.368C13.406 21.1 12.82 22 12 22s-1.406-.899-2.58-2.696l-3.503-5.368C5.305 13 5 12.532 5 12" />
     </svg>
-  );
+  )
 }

@@ -1,44 +1,56 @@
-import type { Technology } from "@/types";
-import { FlaskConical, CheckCircle2, Link, Cpu } from "lucide-react";
+import type { Technology } from "@/types"
 import {
-    SiReact, SiTailwindcss, SiHtml5, SiNextdotjs, SiTypescript,
-    SiJavascript, SiNodedotjs, SiExpress, SiPostgresql, SiMongodb,
-    SiDocker, SiGit, SiGraphql, SiPython, SiDjango, SiKubernetes
-} from "@icons-pack/react-simple-icons";
+  SiReact,
+  SiTailwindcss,
+  SiHtml5,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiNodedotjs,
+  SiExpress,
+  SiPostgresql,
+  SiMongodb,
+  SiDocker,
+  SiGit,
+  SiGraphql,
+  SiPython,
+  SiDjango,
+  SiKubernetes,
+} from "@icons-pack/react-simple-icons"
 
 interface ProjectCardTechnologyProps {
-    technology: Technology;
+  technology: Technology
 }
 
 const technologyIconMap: Record<Technology, React.ElementType> = {
-    react: SiReact,
-    tailwind: SiTailwindcss,
-    html: SiHtml5,
-    "next.js": SiNextdotjs,
-    typescript: SiTypescript,
-    javascript: SiJavascript,
-    "node.js": SiNodedotjs,
-    express: SiExpress,
-    postgresql: SiPostgresql,
-    mongodb: SiMongodb,
-    docker: SiDocker,
-    git: SiGit,
-    graphql: SiGraphql,
-    python: SiPython,
-    django: SiDjango,
-    kubernetes: SiKubernetes,
-};
+  react: SiReact,
+  tailwind: SiTailwindcss,
+  html: SiHtml5,
+  "next.js": SiNextdotjs,
+  typescript: SiTypescript,
+  javascript: SiJavascript,
+  "node.js": SiNodedotjs,
+  express: SiExpress,
+  postgresql: SiPostgresql,
+  mongodb: SiMongodb,
+  docker: SiDocker,
+  git: SiGit,
+  graphql: SiGraphql,
+  python: SiPython,
+  django: SiDjango,
+  kubernetes: SiKubernetes,
+}
 
 const ProjectCardTechnology = ({ technology }: ProjectCardTechnologyProps) => {
-    const IconComponent = technologyIconMap[technology];
+  const IconComponent = technologyIconMap[technology]
 
-    if (!IconComponent) return null;
+  if (!IconComponent) return null
 
-    return (
-        <div className="group flex items-center cursor-pointer">
-            <IconComponent className="h-5 w-5 transition-colors duration-300 group-hover:text-[#d65d0e]" />
-        </div>
-    );
-};
+  return (
+    <div className="group flex cursor-pointer items-center">
+      <IconComponent className="h-5 w-5 transition-colors duration-300 group-hover:text-[#d65d0e]" />
+    </div>
+  )
+}
 
-export default ProjectCardTechnology;
+export default ProjectCardTechnology
